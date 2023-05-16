@@ -131,6 +131,7 @@ Follow these steps to set up this test:
 
     ![Screenshot of Resource Group](./images/Monitoring-App-Config.png)
 
+1. Press **Apply**.
 1. Restart the API web app App Service
     - Go to the API web app App Service (In your resource group resources, search for the app service that starts with `api-` and select the result that is of type **App Service**)
 
