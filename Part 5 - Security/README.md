@@ -25,7 +25,7 @@ Let's see how managed identities can help us remove connection strings from our 
 
         Pick the appropriate Azure subscription and region when prompted.
 
-1. Open the [Azure portal](https://portal.azure.com) and browse for resource groups. The name of the resource group will start with  **<USERNAME>-rg**. (Or what you named it in the previous module.)
+1. Open the [Azure portal](https://portal.azure.com) and browse for resource groups. The name of the resource group will start with  **<USERNAME>-cost-rg**. (Or what you named it in the previous module.)
 1. Open the App Service within the resource group.
 1. Click on the **Identity** menu item in the left navigation.
 1. From the **System assigned** tab, click **On** to enable the system assigned identity. Then click **Save**.
@@ -69,6 +69,8 @@ The web application (and  you!) now has read access to Azure App Configuration. 
 
     ![Screenshot of the sample application](./images/sample-application.png)
 
+   > **Note** Azure Active Directory lazily updates permissions. If you receive a `403 Forbidden` error (surfaced as an exception in Visual Studio), wait for five minutes and try again.
+
 1. Back to the PowerShell terminal and run the following command to deploy the application to Azure:
 
     ```powershell
@@ -99,13 +101,15 @@ Let's provision an Azure Key Vault through the Azure CLI.
     $resourceGroupName = "<RESOURCE_GROUP_NAME>"
     ```
 
-    Replace `<RESOURCE_GROUP_NAME>` with the name of your resource group. It will probably be something like **<USERNAME>-cost**.
+    Replace `<RESOURCE_GROUP_NAME>` with the name of your resource group. It will probably be something like **<USERNAME>-cost-rg**.
 
 1. Provision a new KeyVault with the following command:
 
     ```powershell
-    az keyvault create --name kv-cost-opt --resource-group $resourceGroupName --location eastus
+    az keyvault create --name <USERNAME>-cost-opt --resource-group $resourceGroupName --location eastus
     ```
+
+    Replace `<USERNAME>` with your username.
 
 1. Refresh the resource group view in the Azure portal. The new Key Vault should appear. Open it up.
 1. Click on the **Access policies** menu item in the left navigation.
