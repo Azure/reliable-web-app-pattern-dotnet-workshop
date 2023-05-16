@@ -10,7 +10,7 @@ The workshop is broken down into modules, each module representing a specific pi
 * [Part 2](./Part%202%20-%20RWA%20Overview/README.md) - What is the Reliable Web App Pattern? (15 minutes)
 * [Part 3](./Part%203%20-%20Cost%20Optimization/README.md) - Cost Optimization (30 minutes)
 * [Part 4](./Part%204%20-%20Reliability/README.md) - Reliability (45 minutes)
-* [Part 5](./Part%205%20-%20Operational%20Excellence/README.md) - Security (45 minutes)
+* [Part 5](./Part%205%20-%20Security/README.md) - Security (45 minutes)
 * [Part 6](./Part%206%20-%20Operational%20Excellence/README.md) - Operational Excellence (45 minutes)
 * [Part 7](./Part%207%20-%20Performance%20Efficiency/README.md) - Performance Efficiency (45 minutes)
 
