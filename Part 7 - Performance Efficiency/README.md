@@ -61,7 +61,7 @@ Let's implement the Cache-Aside pattern in our application.
 1. Any time data is modified in the database, the cache needs to be cleared. Update the `CreateConcertAsync` method to include the cache removal. The final method should look like this:
 
     ```csharp
-    public async Task<Concert> CreateConcertAsync(Concert concert)
+    public async Task<CreateResult> CreateConcertAsync(Concert concert)
     {
         database.Add(newConcert);
         await this.database.SaveChangesAsync();
@@ -203,3 +203,24 @@ The reference implementation uses a single Azure Cache for Redis instance to sto
 1. Look for the line that reads `if (string.IsNullOrEmpty(Configuration["App:RedisCache:ConnectionString"]))`. It is here you can see how MSAL is set to use in-memory caching or Azure Cache for Redis to manage tokens.
 1. Open the **CartController.cs** file found in the **Controllers** folder of the **Relecloud.Web** project.
 1. Browse to the `SetCardData` method. Here you can see the session data get set. It seamlessly uses Azure Cache for Redis when available.
+
+## Cleaning up
+
+Thank you for attending this workshop.  We hope you learned something and feel more comfortable tackling the patterns that are used in enterprise web applications.  You can now clean up the resources that you used:
+
+### Cleaning up the cost optimization web application
+
+1. Open a PowerShell terminal.
+2. Change directory to the `Part 3 - Cost Optimization\azd-sample` directory.
+3. Run the command `azd down --force --purge --no-prompt`.
+
+You may also log on to the Azure portal, select the resource group and press **Delete Resource group**.  The resource group is named similar to **<USERNAME>-cost-rg**.
+
+### Cleaning up the reliable web app sample
+
+1. Change directory to the `Reference App` directory.
+2. Run the command `azd down --force --purge --no-prompt`.
+
+You may also log on to the Azure portal, select each resource group and press **Delete Resource group**.  There are two resource groups: **<USERNAME>-rg** and **<USERNAME>-secondary-rg**.
+
+This process leaves the app registrations used in place. You can clean these up in the Azure Portal.  Go to the Azure Active Directory blade, then **App Registrations** > **Owned applications**.  Remove each app registration associated with your username individually.
