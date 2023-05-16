@@ -115,7 +115,13 @@ The Reliable Web App Pattern contains a fully developed reference application th
     azd deploy
     ```
 
-1. Once everything is deployed, you'll be able to open the Azure portal and view your resource group. It will be named something like `<YOUR USER NAME>-rg`. From there you can open up the Front Door and CDN Profile resource, and browse to the endpoint hostname.
+1. Once everything is deployed, you'll be able to open the Azure portal and view your resource group. It will be named something like `<YOUR USER NAME>-rg`. From there you can open up the Front Door and CDN Profile resource, and browse to the endpoint hostname. Alternatively, you can execute the below script to query the Azure Front Door endpoint from your resource group.
+
+   ```powershell
+   pwsh -c "Set-ExecutionPolicy Bypass Process; .\ShowFrontDoorUri.ps1 -ResourceGroupName '$myEnvironmentName-rg'"
+   ```
+
+1. Navigate to the `Front Door URI` and click on the **Employee Sign In** situated at the top right corner. Please follow the login process by using the `username` and `password` that were shared with you earlier. Once you're successfully logged in, you can proceed to complete a ticket purchase.
 
 ### Local development
 
