@@ -1,33 +1,25 @@
-# Project
+# Reliable Web Apps Pattern - .NET Workshop
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This workshop is designed to help you learn how to take your application's first step into the cloud and build reliable web applications using .NET. You can think of the Reliable Web Application (RWA) pattern as a pattern of patterns. Each pattern provides prescriptive guidance on how to build a specific aspect of a reliable web application. You can use them together or separately.
 
-As the maintainer of this project, please make a few updates:
+The workshop is broken down into modules, each module representing a specific pillar or pattern within RWA.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## Agenda
 
-## Contributing
+* [Part 1](./Part%201%20-%20Tooling/README.md) - Tooling and setting up your development environment (45 minutes)
+* [Part 2](./Part%202%20-%20RWA%20Overview/README.md) - What is the Reliable Web App Pattern? (15 minutes)
+* [Part 3](./Part%203%20-%20Cost%20Optimization/README.md) - Cost Optimization (30 minutes)
+* [Part 4](./Part%204%20-%20Reliability/README.md) - Reliability (45 minutes)
+* [Part 5](./Part%205%20-%20Operational%20Excellence/README.md) - Security (45 minutes)
+* [Part 6](./Part%206%20-%20Operational%20Excellence/README.md) - Operational Excellence (45 minutes)
+* [Part 7](./Part%207%20-%20Performance%20Efficiency/README.md) - Performance Efficiency (45 minutes)
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+## Video Walkthrough
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+Matt Soucoup recorded a video series that walks through the same pillars and patterns as covered in this workshop. You can find the [videos here](https://www.youtube.com/playlist?list=PLI7iePan8aH54gIDJquV61dE3ENyaDi3Q).
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## More Links and Resources
 
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+* [Reliable Web App Pattern Code Repository](https://aka.ms/eap/rwa/dotnet)
+* [Azure Architecture Guidance](https://learn.microsoft.com/azure/architecture/reference-architectures/reliable-web-app/dotnet/pattern-overview)
+* [Applying the pattern in-depth](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/reliable-web-app/dotnet/apply-pattern)
