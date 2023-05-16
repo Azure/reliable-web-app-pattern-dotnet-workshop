@@ -30,7 +30,7 @@ resource frontDoorProfile 'Microsoft.Cdn/profiles@2021-06-01' = {
   tags: tags
   location: 'global'
   sku: {
-    name: 'Premium_AzureFrontDoor'
+    name: 'Standard_AzureFrontDoor'
   }
 }
 
@@ -133,7 +133,7 @@ resource frontdoorWebApplicationFirewallPolicy 'Microsoft.Network/frontdoorwebap
   name: 'wafpolicy${globalResourceToken}'
   location: 'Global'
   sku: {
-    name: 'Premium_AzureFrontDoor'
+    name: 'Standard_AzureFrontDoor'
   }
   properties: {
     policySettings: {
@@ -143,24 +143,6 @@ resource frontdoorWebApplicationFirewallPolicy 'Microsoft.Network/frontdoorwebap
     }
     customRules: {
       rules: []
-    }
-    managedRules: {
-      managedRuleSets: [
-        {
-          ruleSetType: 'Microsoft_DefaultRuleSet'
-          ruleSetVersion: '2.0'
-          ruleSetAction: 'Block'
-          ruleGroupOverrides: []
-          exclusions: []
-        }
-        {
-          ruleSetType: 'Microsoft_BotManagerRuleSet'
-          ruleSetVersion: '1.0'
-          ruleSetAction: 'Block'
-          ruleGroupOverrides: []
-          exclusions: []
-        }
-      ]
     }
   }
 }

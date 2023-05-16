@@ -68,7 +68,7 @@ Before we can start developing, we need to authenticate all of the developer too
 Run the following command to clone the code to your local machine:
 
 ```powershell
-git clone https://github.com/codemillmatt/rwa-build-workshop
+git clone https://github.com/Azure/reliable-web-app-pattern-dotnet
 ```
 
 And switch to the folder:
@@ -77,9 +77,7 @@ And switch to the folder:
 cd rwa-build-workshop
 ```
 
-## Azure Resources
-
-As part of this workshop, we've already set up and provisioned the Azure resources for you. (If you're running through the workshop on your own, checkout these steps on how to [provision the resources](https://github.com/Azure/reliable-web-app-pattern-dotnet#steps-to-deploy-the-reference-implementation) yourself.)
+## Deploying to Azure
 
 The Reliable Web App Pattern contains a fully developed reference application that you can use to base your own applications on. We'll use this reference application as part of our workshop today. But first we'll need to provision and deploy the resources.
 
@@ -117,7 +115,7 @@ The Reliable Web App Pattern contains a fully developed reference application th
     azd deploy
     ```
 
-1. Once everything is deployed, you'll be able to open the Azure portal and view your resource group. It will be named something like `<YOUR USER NAME>-rg`. From there you can open up the web application service and browse to it.
+1. Once everything is deployed, you'll be able to open the Azure portal and view your resource group. It will be named something like `<YOUR USER NAME>-rg`. From there you can open up the Front Door and CDN Profile resource, and browse to the endpoint hostname.
 
 ### Local development
 
