@@ -7,6 +7,12 @@
     <UserSecretsId>ff868c0e-c82e-4217-930f-cd0391eecc21</UserSecretsId>
   </PropertyGroup>
 
+  <!-- ⬇️⬇️⬇️ If local development shows an error like: "View now found", uncomment the line below to install NuGet package ⬇️⬇️⬇️ -->
+  <!-- <ItemGroup Condition="'$(Configuration)'=='Debug'">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.16" />
+  </ItemGroup> -->
+  <!-- ⬆️⬆️⬆️ If local development shows an error like: "View now found", uncomment the line above to install NuGet package ⬆️⬆️⬆️ -->
+
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.5.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.20.0" />

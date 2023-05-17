@@ -34,6 +34,12 @@ namespace Relecloud.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // ⬇️⬇️⬇️ If local development shows an error like: "View now found", uncomment the lines below to manually add MVC/Razor ⬇️⬇️⬇️
+// #if DEBUG
+//             services.AddMvc().AddRazorRuntimeCompilation();
+// #endif
+            // ⬆️⬆️⬆️ If local development shows an error like: "View now found", uncomment the lines above to manually add MVC/Razor ⬆️⬆️⬆️
+
             services.AddHttpContextAccessor();
             services.Configure<RelecloudApiOptions>(Configuration.GetSection("App:RelecloudApi"));
             services.AddOptions();
@@ -196,7 +202,7 @@ namespace Relecloud.Web
                     options.DisableL1Cache = true;
                 });
             }
-            
+
             // this sample uses AFD for the URL registered with Azure AD to make it easier to get started
             // but we recommend host name preservation for production scenarios
             // https://learn.microsoft.com/en-us/azure/architecture/best-practices/host-name-preservation
@@ -214,12 +220,14 @@ namespace Relecloud.Web
 
                 options.Events = new OpenIdConnectEvents
                 {
-                    OnRedirectToIdentityProvider = ctx => {
+                    OnRedirectToIdentityProvider = ctx =>
+                    {
                         // not needed when using host name preservation
                         ctx.ProtocolMessage.RedirectUri = $"https://{frontDoorUri}{callbackPath}";
                         return Task.CompletedTask;
                     },
-                    OnRedirectToIdentityProviderForSignOut = ctx => {
+                    OnRedirectToIdentityProviderForSignOut = ctx =>
+                    {
                         // not needed when using host name preservation
                         ctx.ProtocolMessage.PostLogoutRedirectUri = $"https://{frontDoorUri}";
                         return Task.CompletedTask;
@@ -258,7 +266,6 @@ namespace Relecloud.Web
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
-
             // Configure the HTTP request pipeline.
             if (!env.IsDevelopment())
             {

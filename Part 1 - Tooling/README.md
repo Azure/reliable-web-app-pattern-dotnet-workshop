@@ -8,7 +8,7 @@ Before we get into running the workshop, there are 3 things we need to set up.
     - [Sign in to Azure from Visual Studio](#sign-in-to-azure-from-visual-studio)
     - [Authenticate the Azure CLI and Azure Developer CLI](#authenticate-the-azure-cli-and-azure-developer-cli)
     - [Clone the code](#clone-the-code)
-  - [Azure Resources](#azure-resources)
+  - [Deploying to Azure](#deploying-to-azure)
     - [Local development](#local-development)
 
 ## Local development tooling
@@ -183,5 +183,27 @@ Run the following command to give your Azure AD account permission to access the
    - You may be prompted to trust the _ASP.NET Core SSL certificte_ or the _IIS Express SSL certificate_ during the first run.  Choose **Yes** to trust the certificate.
 
 A web browser window with Swagger tooling and the website front-end should appear.
+
+> You may see the error screen on the website front-end like this:
+> 
+> ![View not found error](./images/view-not-found.png)
+> 
+> If you run into this error, try the following:
+> 
+> - Uncomment the line #11-13 on `./Reference App/src/Relecloud.Web/Relecloud.Web.csproj`
+> 
+>   ```xml
+>   <!-- <ItemGroup Condition="'$(Configuration)'=='Debug'">
+>   <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.16" />
+>   </ItemGroup> -->
+>   ```
+> 
+> - Uncomment the line #38-40 on `./Reference App/src/Relecloud.Web/Startup.cs`
+> 
+>   ```csharp
+>   // #if DEBUG
+>   //             services.AddMvc().AddRazorRuntimeCompilation();
+>   // #endif
+>   ```
 
 Now that the tooling is setup, let's look at how you can optimize your costs when building cloud-enabled applications in [the next module](../Part%203%20-%20Cost%20Optimization/README.md).

@@ -30,6 +30,12 @@ namespace Relecloud.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // ⬇️⬇️⬇️ If local development shows an error like: "View now found", uncomment the lines below to manually add MVC/Razor ⬇️⬇️⬇️
+// #if DEBUG
+//             services.AddMvc().AddRazorRuntimeCompilation();
+// #endif
+            // ⬆️⬆️⬆️ If local development shows an error like: "View now found", uncomment the lines above to manually add MVC/Razor ⬆️⬆️⬆️
+
             services.AddHttpContextAccessor();
             services.Configure<RelecloudApiOptions>(Configuration.GetSection("App:RelecloudApi"));
             services.AddOptions();
