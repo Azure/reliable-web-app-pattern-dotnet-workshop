@@ -68,13 +68,13 @@ Before we can start developing, we need to authenticate all of the developer too
 Run the following command to clone the code to your local machine:
 
 ```powershell
-git clone https://github.com/Azure/reliable-web-app-pattern-dotnet
+git clone https://github.com/Azure/reliable-web-app-pattern-dotnet-workshop
 ```
 
 And switch to the folder:
 
 ```powershell
-cd rwa-build-workshop
+cd reliable-web-app-pattern-dotnet-workshop
 ```
 
 ## Deploying to Azure
