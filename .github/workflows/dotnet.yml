@@ -20,14 +20,14 @@ jobs:
     strategy:
       matrix:
         solution:
-        - Part3 - Cost Optimization/azd-sample/src
-        - Part4 - Reliability/finished
-        - Part4 - Reliability/src
-        - Part5 - Security/azd-sample/src
-        - Part5 - Security/finished/src
-        - Part7 - Performance Efficiency/finished
-        - Part7 - Performance Efficiency/start
-        - Reference App/src
+        - Part 3 - Cost Optimization/azd-sample/src/AppConfigurationReader.sln
+        - Part 4 - Reliability/finished/Relecloud.sln
+        - Part 4 - Reliability/src/Relecloud.sln
+        - Part 5 - Security/azd-sample/src/AppConfigurationReader.sln
+        - Part 5 - Security/finished/src/AppConfigurationReader.sln
+        - Part 7 - Performance Efficiency/start/Relecloud.sln
+        - Part 7 - Performance Efficiency/finished/Relecloud.sln
+        - Reference App/src/Relecloud.sln
 
     steps:
     - uses: actions/checkout@v3
@@ -36,4 +36,4 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     - name: Build Step - ${{ matrix.solution }}
-      run: dotnet build "${{ matrix. Solution }}/Relecloud.sln"
+      run: dotnet build "${{ matrix. Solution }}"
