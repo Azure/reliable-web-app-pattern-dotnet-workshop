@@ -20,14 +20,14 @@ jobs:
     strategy:
       matrix:
         solution:
-        - Part3 - Cost Optimization\azd-sample\src
-        - Part4 - Reliability\finished
-        - Part4 - Reliability\src
-        - Part5 - Security\azd-sample\src
-        - Part5 - Security\finished\src
-        - Part7 - Performance Efficiency\finished
-        - Part7 - Performance Efficiency\start
-        - Reference App\src
+        - Part3 - Cost Optimization/azd-sample/src
+        - Part4 - Reliability/finished
+        - Part4 - Reliability/src
+        - Part5 - Security/azd-sample/src
+        - Part5 - Security/finished/src
+        - Part7 - Performance Efficiency/finished
+        - Part7 - Performance Efficiency/start
+        - Reference App/src
 
     steps:
     - uses: actions/checkout@v3
