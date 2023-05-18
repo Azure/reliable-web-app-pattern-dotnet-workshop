@@ -18,6 +18,7 @@ jobs:
     name: Build All Projects
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false    
       matrix:
         solution:
         - Part 3 - Cost Optimization/azd-sample/src/AppConfigurationReader.sln
