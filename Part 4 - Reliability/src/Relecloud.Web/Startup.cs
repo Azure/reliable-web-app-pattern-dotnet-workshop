@@ -15,7 +15,6 @@ using Relecloud.Web.Services.MockServices;
 using Relecloud.Web.Services.RelecloudApiServices;
 
 using System.Diagnostics;
-using System.Security.Claims;
 
 namespace Relecloud.Web
 {
@@ -28,12 +27,12 @@ namespace Relecloud.Web
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IWebHostEnvironment env, IServiceCollection services)
         {
             services.AddHttpContextAccessor();
             services.Configure<RelecloudApiOptions>(Configuration.GetSection("App:RelecloudApi"));
             services.AddOptions();
-            AddAzureAdServices(services);
+            AddAzureAdServices(env, services);
             services.AddControllersWithViews();
             services.AddApplicationInsightsTelemetry(Configuration["App:Api:ApplicationInsights:ConnectionString"]);
 
@@ -136,9 +135,15 @@ namespace Relecloud.Web
             }
         }
 
-        private void AddAzureAdServices(IServiceCollection services)
+        private void AddAzureAdServices(IWebHostEnvironment env, IServiceCollection services)
         {
-            services.AddRazorPages().AddMicrosoftIdentityUI();
+            var mvcBuilder = services.AddRazorPages().AddMicrosoftIdentityUI();
+
+            if (env.IsDevelopment())
+            {
+                // https://learn.microsoft.com/aspnet/core/mvc/views/view-compilation?view=aspnetcore-6.0
+                mvcBuilder.AddRazorRuntimeCompilation();
+            }
 
             services.AddAuthorization(options =>
             {
