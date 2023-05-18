@@ -36,4 +36,4 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     - name: Build Step - ${{ matrix.solution }}
-      run: dotnet build
+      run: dotnet build "${{ matrix.solution }}"
