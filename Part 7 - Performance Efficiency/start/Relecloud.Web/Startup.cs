@@ -32,12 +32,12 @@ namespace Relecloud.Web
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IWebHostEnvironment env, IServiceCollection services)
         {
             services.AddHttpContextAccessor();
             services.Configure<RelecloudApiOptions>(Configuration.GetSection("App:RelecloudApi"));
             services.AddOptions();
-            AddAzureAdServices(services);
+            AddAzureAdServices(env, services);
             services.AddControllersWithViews();
             services.AddApplicationInsightsTelemetry(Configuration["App:Api:ApplicationInsights:ConnectionString"]);
 
@@ -164,10 +164,16 @@ namespace Relecloud.Web
                 .AddPolicyHandler(GetCircuitBreakerPolicy());
             }
         }
-
-        private void AddAzureAdServices(IServiceCollection services)
+        
+        private void AddAzureAdServices(IWebHostEnvironment env, IServiceCollection services)
         {
-            services.AddRazorPages().AddMicrosoftIdentityUI();
+            var mvcBuilder = services.AddRazorPages().AddMicrosoftIdentityUI();
+
+            if (env.IsDevelopment())
+            {
+                // https://learn.microsoft.com/aspnet/core/mvc/views/view-compilation?view=aspnetcore-6.0
+                mvcBuilder.AddRazorRuntimeCompilation();
+            }
 
             services.AddAuthorization(options =>
             {
@@ -196,7 +202,7 @@ namespace Relecloud.Web
                     options.DisableL1Cache = true;
                 });
             }
-            
+
             // this sample uses AFD for the URL registered with Azure AD to make it easier to get started
             // but we recommend host name preservation for production scenarios
             // https://learn.microsoft.com/en-us/azure/architecture/best-practices/host-name-preservation
