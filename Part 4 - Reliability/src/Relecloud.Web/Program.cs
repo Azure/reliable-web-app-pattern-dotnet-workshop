@@ -43,7 +43,7 @@ var startup = new Startup(builder.Configuration);
 // Add services to the container.
 if (hasRequiredConfigSettings)
 {
-    startup.ConfigureServices(builder.Services);
+    startup.ConfigureServices(builder.Environment, builder.Services);
 }
 
 var hasAzureAdSettings = !string.IsNullOrEmpty(builder.Configuration["AzureAd:ClientId"]);
