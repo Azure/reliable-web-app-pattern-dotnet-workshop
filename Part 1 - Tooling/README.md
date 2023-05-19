@@ -87,7 +87,7 @@ The Reliable Web App Pattern contains a fully developed reference application th
     cd "Reference App"
     ```
 
-1. We'll use the Azure Developer CLI to deploy the code. You'll first want to create a new PowerShell environment variable and then initialize the **azd** environment.
+1. We'll use the Azure Developer CLI to deploy the code. You'll first want to create a new PowerShell environment variable and then initialize the **azd** environment. _In this case, your username is only the portion before the `@` in the login credentials._
 
     ```powershell
     $myEnvironmentName = '<YOUR USERNAME>'
