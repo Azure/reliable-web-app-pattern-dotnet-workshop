@@ -44,7 +44,7 @@ You can use bicep parameters to specify Azure resource deployment configurations
 
 1. Now open up the **main.bicep** file. Near the top of the file, the `isProd` variable is defined as an incoming parameter. Further down, on line 35, it is passed to the **resources.bicep** file as a parameter.
 
-1. Open the **resources.bicep** file. `isProd` again is defined as a parameter at the top of the file. On line 67, it is used to make a determination of what SKU level the Azure App Service should be provisioned at.
+1. Open the **resources.bicep** file. `isProd` again is defined as a parameter at the top of the file. On line 62, it is used to make a determination of what SKU level the Azure App Service should be provisioned at.
 
   ```bicep
   var appServicePlanSku = (isProd) ? 'P1v2' : 'B1'
