@@ -8,7 +8,7 @@ Before we get into running the workshop, there are 3 things we need to set up.
     - [Sign in to Azure from Visual Studio](#sign-in-to-azure-from-visual-studio)
     - [Authenticate the Azure CLI and Azure Developer CLI](#authenticate-the-azure-cli-and-azure-developer-cli)
     - [Clone the code](#clone-the-code)
-  - [Azure Resources](#azure-resources)
+  - [Deploying to Azure](#deploying-to-azure)
     - [Local development](#local-development)
 
 ## Local development tooling
