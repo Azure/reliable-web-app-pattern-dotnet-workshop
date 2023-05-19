@@ -13,7 +13,7 @@ In this portion of the workshop, we'll be working with a simple Blazor Server ap
 You can use bicep parameters to specify Azure resource deployment configurations. We'll use a small sample contained in the **Part 3 - Cost Optimization\azd-sample** directory to illustrate this technique.
 
 1. Open a PowerShell terminal and navigate to the **Part 3 - Cost Optimization\azd-sample** directory.
-1. Run the following command to initialize an Azure Developer CLI (azd) environment. _(Replace `<USERNAME>` below with the username you were given at the start of this workshop.)_
+1. Run the following command to initialize an Azure Developer CLI (azd) environment. _(Replace `<USERNAME>` below with the username you were given at the start of this workshop. Only use the portion before the `@` symbol.)_
 
     ```powershell
     $costEnvironmentName = '<USERNAME>'
