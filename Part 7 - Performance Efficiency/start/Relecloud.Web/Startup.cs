@@ -32,7 +32,7 @@ namespace Relecloud.Web
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IWebHostEnvironment environment, IServiceCollection services)
         {
             services.AddHttpContextAccessor();
             services.Configure<RelecloudApiOptions>(Configuration.GetSection("App:RelecloudApi"));
