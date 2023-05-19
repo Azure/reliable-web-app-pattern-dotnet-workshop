@@ -1,5 +1,7 @@
 # Reliable Web Apps Pattern - .NET Workshop
 
+[![.NET Build](https://github.com/Azure/reliable-web-app-pattern-dotnet-workshop/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Azure/reliable-web-app-pattern-dotnet-workshop/actions/workflows/dotnet.yml)
+
 This workshop is designed to help you learn how to take your application's first step into the cloud and build reliable web applications using .NET. You can think of the Reliable Web Application (RWA) pattern as a pattern of patterns. Each pattern provides prescriptive guidance on how to build a specific aspect of a reliable web application. You can use them together or separately.
 
 The workshop is broken down into modules, each module representing a specific pillar or pattern within RWA.
