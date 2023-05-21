@@ -149,7 +149,7 @@ Of course you should tear down and delete resources you no longer need. You can 
     
 Deleting the resources in the Azure portal is a matter of finding the resource you wish to delete and then clicking the **Delete** button. You can delete single, multiple, or entire resource groups.
     
-    ![Screenshot of deleting a resource in the Azure portal](./images/delete-resource.png)
+![Screenshot of deleting a resource in the Azure portal](./images/delete-resource.png)
 
 You can also use the `azd` tooling to delete an entire provision. You would run this command from the same directory where you ran the `azd provision` or `azd up` command from:
     
