@@ -143,18 +143,4 @@ But in order for 2 regions to operate as one, you need a traffic manager or load
 
 And that's exactly the 99.98% uptime our management wanted.
 
-## Delete and cleanup
-
-Of course you should tear down and delete resources you no longer need. You can do this manually in the Azure portal. Or you can use the Azure Developer CLI to do it for you.
-
-1. In a PowerShell terminal, still opened to the **Part 3 - Cost Optimization\azd-sample** directory, run the following to delete the azd environment.
-
-    ```powershell
-    azd down --force --purge --no-prompt
-    ```
-
-> Note - you will still need this sample application further along in the workshop. So while you can delete it here, you will need to reprovision it later by running `azd up` again.
-
-We recommend leaving it running for now and we'll tear it down at the end of the workshop.
-
 Now let's see how we can make our web application more resilient to failures in [Part 4 - Reliability](../Part%204%20-%20Reliability/README.md) module.
