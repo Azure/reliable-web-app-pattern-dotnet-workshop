@@ -11,20 +11,7 @@ When you grant managed identities access to a resource, you should always grant 
 Let's see how managed identities can help us remove connection strings from our code.
 
 1. We'll use the same sample application as we did during the [Cost Optimization](../Cost%20Optimization/README.md) module. A copy of the code is already in this module under the [azd-sample](./azd-sample) directory.
-1. Follow **only one** of the steps below:
-    1. _If you did **NOT** delete the application from the previous module_, copy the **.azure** directory from the **Part 3 - Cost Optimization\azd-sample** directory to the **Part 5 - Security\azd-sample** directory.
-    1. _If you **DID DELETE** the application from the previous module_, you'll need to recreate it. Follow these steps:
-        1. Open a PowerShell terminal at the **Part 5 - Security\azd-sample** directory.
-        1. Run the following commands to provision and deploy the sample application:
-
-        ```powershell
-        azd init -e <USERNAME>
-        azd env set IS_PROD false
-        azd up
-        ```
-
-        Pick the appropriate Azure subscription and region when prompted.
-
+1. Copy the **.azure** directory from the **Part 3 - Cost Optimization\azd-sample** directory to the **Part 5 - Security\azd-sample** directory.
 1. Open the [Azure portal](https://portal.azure.com) and browse for resource groups. The name of the resource group will start with  **<USERNAME>-cost-rg**. (Or what you named it in the previous module.)
 1. Open the App Service within the resource group.
 1. Click on the **Identity** menu item in the left navigation.
