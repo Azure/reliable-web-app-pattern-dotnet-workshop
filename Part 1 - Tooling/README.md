@@ -99,7 +99,8 @@ The Reliable Web App Pattern contains a fully developed reference application th
     ```powershell
     azd provision
     ```
-
+    > When the prompt appears to select an Azure location, opt for either West US (westus) or East US (eastus).
+    
     > We're going to move ahead to the **RWA Overview** lecture portion of the workshop while everybody's machine provisions. Once done, we'll come back and finish the tooling setup.
 
 1. Because the RWA reference application uses Azure AD resources, we want to create Azure AD application client registrations for the web and API applications. Use the following command:
