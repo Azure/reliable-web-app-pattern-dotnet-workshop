@@ -103,6 +103,8 @@ The Reliable Web App Pattern contains a fully developed reference application th
     
     > We're going to move ahead to the **RWA Overview** lecture portion of the workshop while everybody's machine provisions. Once done, we'll come back and finish the tooling setup.
 
+##### After the provision
+
 1. Because the RWA reference application uses Azure AD resources, we want to create Azure AD application client registrations for the web and API applications. Use the following command:
 
     ```powershell
