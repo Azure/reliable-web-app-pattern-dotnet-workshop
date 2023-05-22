@@ -71,7 +71,7 @@ Let's execute a script to rotate Azure AD Client secret.
 
     ![Screen Short of Azure AD](./images/AD-Search.png)
 
-1. Got to **App Registrations** under **Azure Active Directory**. Select the tab **Owned Applications** and search for your `<USERNAME> frontend` and click on `<USERNAME>-<RANDOMSTRING>-frontend`.
+1. Go to **App Registrations** under **Azure Active Directory**. Select the tab **Owned Applications** and search for your `<USERNAME> frontend` and click on `<USERNAME>-<RANDOMSTRING>-frontend`.
 
     ![Screenshot of Azure AD App Registrations](./images/AD-App-Registrations.png)
 
