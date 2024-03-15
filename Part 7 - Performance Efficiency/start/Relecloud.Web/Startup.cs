@@ -213,29 +213,32 @@ namespace Relecloud.Web
             });
 
             services.Configure<OpenIdConnectOptions>(Configuration.GetSection("AzureAd"));
-            services.Configure((Action<MicrosoftIdentityOptions>)(options =>
+            if (!Debugger.IsAttached)
             {
-                var frontDoorUri = Configuration["App:FrontDoorUri"];
-                var callbackPath = Configuration["AzureAd:CallbackPath"];
-
-                options.Events = new OpenIdConnectEvents
+                services.Configure((Action<MicrosoftIdentityOptions>)(options =>
                 {
-                    OnRedirectToIdentityProvider = ctx => {
-                        // not needed when using host name preservation
-                        ctx.ProtocolMessage.RedirectUri = $"https://{frontDoorUri}{callbackPath}";
-                        return Task.CompletedTask;
-                    },
-                    OnRedirectToIdentityProviderForSignOut = ctx => {
-                        // not needed when using host name preservation
-                        ctx.ProtocolMessage.PostLogoutRedirectUri = $"https://{frontDoorUri}";
-                        return Task.CompletedTask;
-                    },
-                    OnTokenValidated = async ctx =>
+                    var frontDoorUri = Configuration["App:FrontDoorUri"];
+                    var callbackPath = Configuration["AzureAd:CallbackPath"];
+
+                    options.Events = new OpenIdConnectEvents
                     {
-                        await CreateOrUpdateUserInformation(ctx);
-                    }
-                };
-            }));
+                        OnRedirectToIdentityProvider = ctx => {
+                            // not needed when using host name preservation
+                            ctx.ProtocolMessage.RedirectUri = $"https://{frontDoorUri}{callbackPath}";
+                            return Task.CompletedTask;
+                        },
+                        OnRedirectToIdentityProviderForSignOut = ctx => {
+                            // not needed when using host name preservation
+                            ctx.ProtocolMessage.PostLogoutRedirectUri = $"https://{frontDoorUri}";
+                            return Task.CompletedTask;
+                        },
+                        OnTokenValidated = async ctx =>
+                        {
+                            await CreateOrUpdateUserInformation(ctx);
+                        }
+                    };
+                }));
+            }
         }
 
         private static async Task CreateOrUpdateUserInformation(TokenValidatedContext ctx)
